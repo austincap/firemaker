@@ -1,0 +1,19 @@
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+vertex_color_use_as_albedo = true
+params_diffuse_mode = 1
+params_blend_mode = 1
+params_cull_mode = 2
+params_line_width = 0.1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 0.117647, 0.396078, 0.823529, 1 )
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color( 0.439216, 0.513726, 0.756863, 1 )
+emission_energy = 0.1
+emission_operator = 0
+emission_on_uv2 = false

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://2D/2Dstick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://2D/2Dplayer.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 319.184, 10 )
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.439216, 0, 0, 1, 0.133333, 0.0862745, 0.0862745, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="CircleShape2D" id=4]
+
+[node name="2DWorld" type="Node2D"]
+
+[node name="StickBody" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5.33837, -4.29163 )
+
+[node name="StickBody2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 31, -34 )
+
+[node name="StickBody3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1, -24 )
+
+[node name="StickBody4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2.13453, -56.5884 )
+
+[node name="StickBody5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -35.3626, -40.0134 )
+
+[node name="StickBody6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -77.205, -31.4313 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 31
+collision_mask = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.104679, 9.94403 )
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2( 64.7486, -0.111279 )
+scale = Vector2( 2.47583, 1 )
+texture = SubResource( 3 )
+polygon = PoolVector2Array( -98.6435, -0.920769, 100.37, 0.0987625, 121.122, -1.89482, 100.37, 18.4504, -100.275, 21.7129 )
+
+[node name="2Dplayer" type="KinematicBody2D" parent="."]
+position = Vector2( 74, -17 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2Dplayer"]
+position = Vector2( -0.178734, -2.28341 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="2Dplayer"]
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="2Dplayer"]
+polygon = PoolVector2Array( -6.78454, 5.15837, 0.300583, -18.0808, 7.3857, 5.53624, -7.54028, 5.15837 )
